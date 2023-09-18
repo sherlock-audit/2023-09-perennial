@@ -1,4 +1,4 @@
-# Perennial V2 Vault
+# Perennial V2
 
 Monorepo for the Perennial V2 Protocol
 
@@ -24,13 +24,16 @@ This also generates the Typechain types
 
 ### Test
 
-Run the Mocha unit tests for each package:
+Perennial has 5 logic packages: `perennial-v2`, `perennial-v2-extensions`, `perennial-v2-oracle`, `perennial-v2-payoff`, and `perennial-v2-vault`
+
+
+Run the Mocha unit tests a specific package:
 
 ```sh
-$ yarn workspaces run test
+$ yarn workspace @equilibria/<package-name> run test
 ```
 
-To run unit tests for a specific package:
+For example, to run the tests for the core package:
 
 ```sh
 $ yarn workspace @equilibria/perennial-v2 run test
@@ -39,10 +42,10 @@ $ yarn workspace @equilibria/perennial-v2 run test
 To run tests against a Mainnet fork, set your `MAINNET_NODE_URL` in the root `.env` and run
 
 ```sh
-$ yarn workspaces run test:integration
+$ yarn workspace run @equilibria/<package-name> test:integration
 ```
 
-or
+For example, to run the integration tests for the core package:
 
 ```sh
 $ yarn workspace @equilibria/perennial-v2 run test:integration
